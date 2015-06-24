@@ -1,16 +1,18 @@
-.Collage{
+#photos {
+  /* Prevent vertical gaps */
+  line-height: 0;
+   
+  -webkit-column-count: 3;
+  -webkit-column-gap:   0px;
+  -moz-column-count:    3;
+  -moz-column-gap:      0px;
+  column-count:         3;
+  column-gap:           0px;  
+}
 
-    /* define how much padding you want in between your images */
-    padding:10px;
-
-    }
-
-.Collage img{
-
-    /* ensures padding at the bottom of the image is correct */
-    vertical-align:bottom;
-
-    /* hide the images until the plugin has run. the plugin will reveal the images*/
-    opacity:0;
-
-    }
+#photos img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+  padding:3px;
+}
