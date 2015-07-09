@@ -3,14 +3,41 @@ url = "/home2"
 layout = "main_layout"
 is_hidden = "0"
 ==
+<!--<?php 
+    function loadImages(){
+        $dirs = scandir("/themes/archigallery/assets/img/project");
+        foreach($dirs as $dir){
+            if($dir!="." && $dir!=".."){
+                $files = scandir("/themes/archigallery/assets/img/projects/".$dir);
+                foreach($files as $file){
+                    if($file!="." && $file!=".."){
+                        
+                        echo '<a class="thumbnail" rel="lightbox[$dir]" href="/themes/archigallery/assets/img/projects/"'.$dir.'><img class="group1" src="/themes/archigallery/assets/img/projects/"'.$dir.'"/"'.$file.'></a>';
+                    }
+                }
+            }
+        }
+    }
+   
+?>-->
+<script>
+    $(document).ready(function(){
+        $("[rel^='lightbox']").prettyPhoto();
+    });
+    
+</script>
 <section id="photos">
-    <a class="thumbnail" rel="lightbox[group]" href={{ 'assets/img/portfolio-1.jpg'|theme }}><img class="group1" src={{ 'assets/img/portfolio-1.jpg'|theme }}></a>
-    <a class="thumbnail" rel="lightbox[group]" href="http://placehold.it/350x150"><img class="group1" src="http://placehold.it/350x150"></a>
-    <a class="thumbnail" rel="lightbox[group]" href="http://placehold.it/400x300"><img class="group1" src="http://placehold.it/400x300"></a>
-    <a class="thumbnail" rel="lightbox[group]" href="http://placehold.it/290x800"><img class="group1" src="http://placehold.it/290x800"></a>
+    
+    <a class="thumbnail" rel="lightbox[pics]" href={{ 'assets/img/portfolio-1.jpg'|theme }}><img class="group1" src={{ 'assets/img/portfolio-1.jpg'|theme }}></a>
+    
+    <a class="thumbnail" rel="lightbox[group2]" href={{ 'assets/img/home.jpg'|theme }}><img class="group1" src={{ 'assets/img/home.jpg'|theme }}></a>
     <a class="thumbnail" rel="lightbox[group]" href={{ 'assets/img/portfolio-2.jpg'|theme }}><img class="group1" src={{ 'assets/img/portfolio-2.jpg'|theme }}></a>
-    <a class="thumbnail" rel="lightbox[group]" href={{ 'assets/img/portfolio-3.jpg'|theme }}><img class="group1" src={{ 'assets/img/portfolio-3.jpg'|theme }}></a>
+    <a class="thumbnail" rel="lightbox[group2]" href={{ 'assets/img/portfolio-3.jpg'|theme }}><img class="group1" src={{ 'assets/img/portfolio-3.jpg'|theme }}></a>
     <a class="thumbnail" rel="lightbox[group]" href={{ 'assets/img/portfolio-4.jpg'|theme }}><img class="group1" src={{ 'assets/img/portfolio-4.jpg'|theme }}></a>
+    <a class="thumbnail" rel="lightbox[group2]" href={{ 'assets/img/pics/3.jpg'|theme }}><img class="group1" src={{ 'assets/img/pics/3.jpg'|theme }}></a>
+    <a class="thumbnail" rel="lightbox[group]" href={{ 'assets/img/pics/4.jpg'|theme }}><img class="group1" src={{ 'assets/img/pics/4.jpg'|theme }}></a>
+    <a class="thumbnail" rel="lightbox[group2]" href={{ 'assets/img/pics/1.jpg'|theme }}><img class="group1" src={{ 'assets/img/pics/1.jpg'|theme }}></a>
+    <a class="thumbnail" rel="lightbox[group]" href={{ 'assets/img/pics/2.jpg'|theme }}><img class="group1" src={{ 'assets/img/pics/2.jpg'|theme }}></a>
 </section>
 
 
@@ -20,9 +47,3 @@ is_hidden = "0"
 <script src={{'assets/js/plugins.js'|theme}}></script>
 <script src={{'assets/js/jquery.prettyPhoto.js'|theme}}></script>
 <script src={{'assets/js/main.js'|theme}}></script>
-
-<script>
-    $(document).ready(function(){
-        $("[rel^='lightbox']").prettyPhoto();
-    });
-</script>
